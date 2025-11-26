@@ -23,8 +23,13 @@ datasource db {
   price     Float                              
   stock     Int      @default(0)                      
   createdAt DateTime @default(now())
-  
-   authorId  Int                                       
+  authorId Int
+
   author    Author   @relation(fields: [authorId], references: [id])
 }
- 
+
+model genre{
+  id String @id 
+  title String
+  authorId Int
+}
